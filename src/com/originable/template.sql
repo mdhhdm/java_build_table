@@ -1,6 +1,7 @@
+DROP TABLE IF EXISTS `device_install_app_xxxx`;
 CREATE TABLE `device_install_app_xxxx` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '编号',
-  `uid` bigint(20) NOT NULL COMMENT '用户ID',
+  `uid` bigint(20) NOT NULL COMMENT '用户id',
   `deviceid` varchar(255) NOT NULL COMMENT '设备编号',
   `bundleid` varchar(100) NOT NULL COMMENT 'bundleid',
   `status` int(11) NOT NULL COMMENT '状态，1-安装，0-卸载了',
@@ -10,4 +11,4 @@ CREATE TABLE `device_install_app_xxxx` (
   UNIQUE KEY `idx_deviceid_bundleid` (`deviceid`,`bundleid`),
   KEY `idx_bundleid` (`bundleid`),
   KEY `idx_cts` (`cts`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='安装app日志'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='安装app日志';
